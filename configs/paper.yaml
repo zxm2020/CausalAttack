@@ -1,0 +1,20 @@
+attack:
+  outer_steps: 3
+  learning_rate: 0.01
+  sam_radius: 0.05
+  sam_norm: l2
+  mmd_samples: 1024
+  mmd_sampling: uniform_with_replacement_fixed_shared_indices
+  mmd_bandwidth: 1.0
+  alpha: 1.0
+  beta: 1.0
+  l2_weight: 1.0e-6
+projectnet:
+  image_size: 256
+  latent_shape: [4, 32, 32]
+  online_timestep: 100
+  scheduler_train_steps: 1000
+  scheduler_beta_schedule: squaredcos_cap_v2
+display:
+  clip_after_completed_update: true
+  bit_depth: 8

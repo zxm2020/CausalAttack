@@ -1,0 +1,29 @@
+image_size: 256
+latent_shape: [4, 32, 32]
+vae: stabilityai/sd-vae-ft-mse
+vae_frozen: true
+unet:
+  input_channels: 12
+  output_channels: 4
+  block_channels: [64, 128, 128]
+  layers_per_block: 1
+  norm_num_groups: 16
+diffusion:
+  train_timesteps: 1000
+  beta_schedule: squaredcos_cap_v2
+  prediction_type: epsilon
+  online_timestep: 100
+stage_1:
+  triplets: 3000
+  train_validation_test: [2400, 300, 300]
+  epochs: 20
+  batch_size: 4
+  learning_rate: 2.0e-4
+stage_2:
+  measured_triplets: 100
+  train_validation_test: [60, 20, 20]
+  epochs: 6
+  batch_size: 2
+  learning_rate: 2.0e-4
+  ewc_weight: 1.0
+  fisher_minibatches: 8

@@ -1,0 +1,50 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+**/key.txt
+**/KEY_HERE.txt
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Downloaded datasets, checkpoints, and generated results
+/data/
+/checkpoints/
+/outputs/
+/runs/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.bin
+*.safetensors
+*.avi
+*.mp4
+
+# JavaScript dependencies, editors, and OS files
+/node_modules/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local tool state
+.ultralytics/
+.yolov5/
+
+# Internal execution notes are not part of the release
+REPRODUCTION_STATUS.md
